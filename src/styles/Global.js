@@ -43,4 +43,18 @@ export default createGlobalStyle`
   button {
     cursor: pointer;
   }
+
+  .container {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--gray-4);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .containerInput {
+    width: 100%;
+  }
+
 `;
