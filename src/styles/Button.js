@@ -15,6 +15,10 @@ export const BtnDefault = styled.button`
   align-items: center;
 
   font-size: 1.4rem;
+
+  :hover {
+    filter: brightness(0.9);
+  }
 `;
 
 export const BtnLogoutAndBack = styled.button`

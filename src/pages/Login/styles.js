@@ -29,5 +29,9 @@ export const DivRedirectRegister = styled.div`
 
     font-size: 1.4rem;
     text-decoration: none;
+
+    :hover {
+      filter: brightness(0.9);
+    }
   }
 `;
