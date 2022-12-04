@@ -43,4 +43,9 @@ export const Form = styled.form`
       border: 1px solid var(--gray-1);
     }
   }
+
+  .errors {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+  }
 `;
