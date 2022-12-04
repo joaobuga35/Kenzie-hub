@@ -10,7 +10,6 @@ import { registerSchema } from "./registerSchema.js";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { api } from "../../services/api.js";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 

@@ -2,11 +2,18 @@ import { Link } from "react-router-dom";
 import { Logo } from "../../styles/Logo";
 import { HeaderDash } from "./styles";
 
-export const Header = () => {
+export const Header = ({ removeLocalStorage }) => {
   return (
     <HeaderDash>
       <Logo>Kenzie Hub</Logo>
-      <Link to={"/"}>Sair</Link>
+      <Link
+        to={"/"}
+        onClick={() => {
+          removeLocalStorage();
+        }}
+      >
+        Sair
+      </Link>
     </HeaderDash>
   );
 };
