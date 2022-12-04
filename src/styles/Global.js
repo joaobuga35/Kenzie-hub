@@ -53,6 +53,16 @@ export default createGlobalStyle`
     flex-direction: column;
   }
 
+  .container-register {
+    height: 100%;
+  }
+
+  .container-dash {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--gray-4);
+  }
+
   .containerInput {
     width: 100%;
   }

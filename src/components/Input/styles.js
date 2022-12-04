@@ -7,12 +7,18 @@ export const Input = styled.input`
   background-color: var(--gray-2);
   color: var(--gray-0);
 
-  border: 1px solid var(--gray-0);
+  border: 1px solid var(--gray-3);
   border-radius: 0.4rem;
 
   padding-left: 1.3rem;
   padding-top: 0.8rem;
   padding-bottom: 0.8rem;
+
+  outline: 0;
+
+  :focus {
+    border: 1px solid var(--gray-1);
+  }
 `;
 
 export const Label = styled.label`

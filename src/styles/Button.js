@@ -20,18 +20,3 @@ export const BtnDefault = styled.button`
     filter: brightness(0.9);
   }
 `;
-
-export const BtnLogoutAndBack = styled.button`
-  background-color: var(--gray-3);
-  color: var(--color-background);
-
-  width: ${(props) => props.widthBtn};
-  height: 3.2rem;
-
-  border: 1px solid var(--gray-3);
-  border-radius: 0.4rem;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
