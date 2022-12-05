@@ -7,6 +7,7 @@ export const Dashboard = () => {
 
   const removeLocalStorage = () => {
     localStorage.removeItem("@dataUser");
+    localStorage.removeItem("@TOKEN");
   };
   return (
     <div className="container-dash animate__animated animate__fadeInUpBig">
