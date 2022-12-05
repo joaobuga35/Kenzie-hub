@@ -30,6 +30,7 @@ export const Login = () => {
     try {
       const response = await api.post("sessions", form);
       localStorage.setItem("@dataUser", JSON.stringify(response.data));
+      localStorage.setItem("@TOKEN", JSON.stringify(response.data.token));
       toast.success("Logado com sucesso!", {
         position: toast.POSITION.TOP_RIGHT,
       });
