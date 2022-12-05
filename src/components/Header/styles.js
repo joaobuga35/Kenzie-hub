@@ -8,7 +8,6 @@ export const HeaderDash = styled.header`
   padding-top: 2rem;
   padding-bottom: 2rem;
 
-  border-bottom: 1px solid var(--gray-3);
   a {
     text-decoration: none;
     background-color: var(--gray-3);
@@ -27,5 +26,10 @@ export const HeaderDash = styled.header`
     :hover {
       filter: brightness(0.9);
     }
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 90rem;
+    margin: 0 auto;
   }
 `;

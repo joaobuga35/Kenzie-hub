@@ -1,9 +1,14 @@
 import styled from "styled-components";
 
 export const DivDashMain = styled.div`
-  @media (min-width: 1024px) {
-    max-width: 900px;
-    margin: 0 auto;
+  .divContentDatas {
+    border-top: 1px solid var(--gray-3);
+    border-bottom: 1px solid var(--gray-3);
+  }
+
+  .divUser {
+    display: flex;
+    justify-content: space-between;
   }
 `;
 
@@ -28,5 +33,10 @@ export const Profile = styled.div`
   p {
     color: var(--gray-1);
     font-size: 1.4rem;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 90rem;
+    margin: 0 auto;
   }
 `;

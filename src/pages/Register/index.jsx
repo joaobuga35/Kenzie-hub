@@ -12,6 +12,7 @@ import { api } from "../../services/api.js";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "animate.css";
 
 export const Register = () => {
   const {
@@ -47,7 +48,7 @@ export const Register = () => {
     reset();
   };
   return (
-    <div className="container container-register">
+    <div className="container container-register animate__animated animate__fadeInUpBig">
       <DivButtonBack>
         <Logo>Kenzie Hub</Logo>
         <Link to={"/"}>Voltar</Link>

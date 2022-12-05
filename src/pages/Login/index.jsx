@@ -11,6 +11,7 @@ import { registerSchemaLogin } from "./registerSchema.js";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
+import "animate.css";
 
 export const Login = () => {
   const {
@@ -29,6 +30,9 @@ export const Login = () => {
     try {
       const response = await api.post("sessions", form);
       localStorage.setItem("@dataUser", JSON.stringify(response.data));
+      toast.success("Logado com sucesso!", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
       navigate("/dashboard");
     } catch (error) {
       toast.error("Email ou senha incorreto!", {
@@ -43,7 +47,7 @@ export const Login = () => {
     console.log(data);
   };
   return (
-    <div className="container">
+    <div className="container animate__animated animate__fadeInUpBig">
       <Logo marginTop={"7rem"} marginBottom={"1.5rem"}>
         Kenzie Hub
       </Logo>
