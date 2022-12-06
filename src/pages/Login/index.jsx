@@ -45,7 +45,6 @@ export const Login = () => {
   const submit = async (data) => {
     await userLogin(data);
     reset();
-    console.log(data);
   };
   return (
     <div className="container animate__animated animate__fadeInUpBig">

@@ -30,13 +30,11 @@ export const Register = () => {
   const userRegister = async (form) => {
     try {
       const response = await api.post("users", form);
-      console.log(response.data);
       toast.success("Cadastro realizado com sucesso!", {
         position: toast.POSITION.TOP_RIGHT,
       });
       navigate("/");
     } catch (error) {
-      console.log(error);
       toast.error("Usuário já cadastrado!", {
         position: toast.POSITION.TOP_RIGHT,
       });
