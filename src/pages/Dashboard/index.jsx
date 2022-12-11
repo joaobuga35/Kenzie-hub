@@ -1,6 +1,9 @@
 import { Header } from "../../components/Header";
 import { DivDashMain, Profile } from "./styles";
 import "animate.css";
+import { ButtonModal } from "../../styles/Button";
+import { BsPlusLg } from "react-icons/bs";
+import { TechList } from "../../components/List";
 export const Dashboard = () => {
   const datas = localStorage.getItem("@dataUser");
   const datasUpdate = JSON.parse(datas);
@@ -22,10 +25,33 @@ export const Dashboard = () => {
           </Profile>
         </div>
         <Profile>
-          <h2>Que pena! Estamos em desenvolvimento.</h2>
-          <p>
-            Nossa aplicação está em desenvolvimento, em breve teremos novidades
-          </p>
+          <div className="divTech">
+            <h3>Tecnologias</h3>
+            <ButtonModal>
+              <BsPlusLg className="plus" />
+            </ButtonModal>
+          </div>
+          <TechList>
+            <li>
+              <h3>React</h3>
+              <span>Avançado</span>
+            </li>
+
+            <li>
+              <h3>React</h3>
+              <span>Avançado</span>
+            </li>
+
+            <li>
+              <h3>React</h3>
+              <span>Avançado</span>
+            </li>
+
+            <li>
+              <h3>React</h3>
+              <span>Avançado</span>
+            </li>
+          </TechList>
         </Profile>
       </DivDashMain>
     </div>
