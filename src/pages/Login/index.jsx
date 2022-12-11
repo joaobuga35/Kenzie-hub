@@ -5,15 +5,14 @@ import { BtnDefault } from "../../styles/Button.js";
 import { DivRedirectRegister } from "./styles.js";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { api } from "../../services/api.js";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { registerSchemaLogin } from "./registerSchema.js";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { useNavigate } from "react-router-dom";
 import "animate.css";
+import { UserContext } from "../../contexts/UserContext/index.jsx";
+import { useContext } from "react";
 
 export const Login = () => {
+  const { userLogin } = useContext(UserContext);
   const {
     register,
     handleSubmit,
@@ -23,24 +22,6 @@ export const Login = () => {
     mode: "onSubmit",
     resolver: yupResolver(registerSchemaLogin),
   });
-
-  const navigate = useNavigate();
-
-  const userLogin = async (form) => {
-    try {
-      const response = await api.post("sessions", form);
-      localStorage.setItem("@dataUser", JSON.stringify(response.data));
-      localStorage.setItem("@TOKEN", JSON.stringify(response.data.token));
-      toast.success("Logado com sucesso!", {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-      navigate("/dashboard");
-    } catch (error) {
-      toast.error("Email ou senha incorreto!", {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-    }
-  };
 
   const submit = async (data) => {
     await userLogin(data);

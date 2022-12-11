@@ -43,3 +43,14 @@ export const ButtonModal = styled.button`
     color: var(--gray-3);
   }
 `;
+
+export const ButtonTrash = styled.button`
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 0.4rem;
+  border: none;
+  background-color: var(--gray-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;

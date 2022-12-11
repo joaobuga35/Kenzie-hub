@@ -1,6 +1,8 @@
 import { RoutesMain as Routes } from "./routes";
 import Global from "./styles/Global";
 import { ToastContainer } from "react-toastify";
+import { UserProvider } from "./contexts/UserContext";
+import { TechProvider } from "./contexts/TechContext";
 function App() {
   return (
     <>
@@ -18,7 +20,11 @@ function App() {
       />
       <ToastContainer />
       <Global />
-      <Routes />
+      <UserProvider>
+        <TechProvider>
+          <Routes />
+        </TechProvider>
+      </UserProvider>
     </>
   );
 }
