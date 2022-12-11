@@ -9,19 +9,20 @@ import { registerSchemaCreate } from "./registerSchemaCreate.js";
 import { useForm } from "react-hook-form";
 
 export const ModalCreate = () => {
-  const { setModalVisible } = useContext(TechContext);
+  const { setModalVisible, TechCreate } = useContext(TechContext);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({
-    mode: "onBlur",
+    mode: "onSubmit",
     resolver: yupResolver(registerSchemaCreate),
   });
 
   const submit = async (data) => {
-    console.log(data);
+    await TechCreate(data);
+    setModalVisible(false);
   };
   return (
     <ModalWrapper>

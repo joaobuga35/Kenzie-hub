@@ -12,7 +12,7 @@ import { TechContext } from "../../contexts/TechContext";
 import { ModalCreate } from "../../components/Modals";
 export const Dashboard = () => {
   const { datasUpdate } = useContext(UserContext);
-  const { modalVisible, setModalVisible } = useContext(TechContext);
+  const { modalVisible, setModalVisible, techs } = useContext(TechContext);
 
   return (
     <div className="container-dash animate__animated animate__fadeInUpBig">
@@ -35,45 +35,17 @@ export const Dashboard = () => {
             </ButtonModal>
           </div>
           <TechList>
-            <Li>
-              <h3>React</h3>
-              <div className="divTrash">
-                <span>Avançado</span>
-                <ButtonTrash>
-                  <BsTrash />
-                </ButtonTrash>
-              </div>
-            </Li>
-
-            <Li>
-              <h3>React</h3>
-              <div className="divTrash">
-                <span>Avançado</span>
-                <ButtonTrash>
-                  <BsTrash />
-                </ButtonTrash>
-              </div>
-            </Li>
-
-            <Li>
-              <h3>React</h3>
-              <div className="divTrash">
-                <span>Avançado</span>
-                <ButtonTrash>
-                  <BsTrash />
-                </ButtonTrash>
-              </div>
-            </Li>
-
-            <Li>
-              <h3>React</h3>
-              <div className="divTrash">
-                <span>Avançado</span>
-                <ButtonTrash>
-                  <BsTrash />
-                </ButtonTrash>
-              </div>
-            </Li>
+            {techs.map((elem, index) => (
+              <Li key={elem.id} id={elem.id}>
+                <h3>{elem.title}</h3>
+                <div className="divTrash">
+                  <span>{elem.status}</span>
+                  <ButtonTrash>
+                    <BsTrash />
+                  </ButtonTrash>
+                </div>
+              </Li>
+            ))}
           </TechList>
         </Profile>
       </DivDashMain>

@@ -76,6 +76,7 @@ export const UserProvider = ({ children }) => {
         loading,
         datasUpdate,
         removeLocalStorage,
+        token,
       }}
     >
       {children}

@@ -50,7 +50,11 @@ export const ModalTitle = styled.div`
 `;
 export const ModalForm = styled.form`
   padding: 2.4rem 2rem;
-
+  .errorsModal {
+    margin-left: 1rem;
+    font-size: 1.2rem;
+    color: var(--color-primary);
+  }
   .titleStatus {
     display: block;
     margin-top: 1.6rem;
