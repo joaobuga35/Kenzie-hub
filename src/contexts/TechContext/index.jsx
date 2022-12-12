@@ -13,6 +13,8 @@ export const TechProvider = ({ children }) => {
   const [modalVisible, setModalVisible] = useState(false);
   const [modalEdit, setModalEdit] = useState(false);
   const [techs, setTechs] = useState([]);
+  const [filterTech, setFilterTech] = useState([]);
+  const id = filterTech.map((elem) => elem.id);
 
   useEffect(() => {
     (async () => {
@@ -24,7 +26,29 @@ export const TechProvider = ({ children }) => {
         console.error(error);
       }
     })();
-  }, [modalVisible, token]);
+  }, [modalVisible, token, modalEdit, id]);
+
+  const userUpdate = async (form) => {
+    try {
+      const response = await api.put(`users/techs/${id}`, form);
+      toast.success("Tecnologia Atualizada!", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const userDelete = async (form) => {
+    try {
+      const response = await api.delete(`users/techs/${id}`, form);
+      toast.success("Tecnologia deletada!", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const TechCreate = async (form) => {
     const load = toast.loading("Por favor espere...");
@@ -68,6 +92,10 @@ export const TechProvider = ({ children }) => {
         setTechs,
         modalEdit,
         setModalEdit,
+        filterTech,
+        setFilterTech,
+        userUpdate,
+        userDelete,
       }}
     >
       {children}

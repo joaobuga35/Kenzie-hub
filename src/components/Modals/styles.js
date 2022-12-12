@@ -78,4 +78,50 @@ export const ModalForm = styled.form`
 
     font-size: 1.4rem;
   }
+
+  .divBtnFormModal {
+    display: flex;
+    gap: 2rem;
+  }
+  .btnSave {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+
+    width: 13.2rem;
+    height: 3.8rem;
+
+    border: 1px solid var(--color-primary);
+    border-radius: 0.4rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.4rem;
+
+    :hover {
+      filter: brightness(0.9);
+    }
+  }
+
+  .btnExcludes {
+    background-color: var(--gray-1);
+    color: var(--color-background);
+
+    width: 13.2rem;
+    height: 3.8rem;
+
+    border: 1px solid var(--gray-1);
+    border-radius: 0.4rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.4rem;
+
+    :hover {
+      filter: brightness(0.9);
+    }
+  }
 `;
