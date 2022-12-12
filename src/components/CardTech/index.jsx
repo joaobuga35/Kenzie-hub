@@ -4,15 +4,20 @@ import { LiStyle } from "./styles";
 
 export const Li = ({ children, id }) => {
   const { setModalEdit, techs, setFilterTech } = useContext(TechContext);
+  const filterAll = (id) => {
+    const oneTech = techs.filter((elem) => id === elem.id);
+    setFilterTech(oneTech);
+  };
+
   return (
     <LiStyle
       id={id}
       onClick={(event) => {
-        setFilterTech(
-          techs.filter(
-            (elem) => parseInt(event.target.id) === parseInt(elem.id)
-          )
-        );
+        if (event.target.id) {
+          filterAll(event.target.id);
+        } else {
+          filterAll(event.target.parentElement.id);
+        }
         setModalEdit(true);
       }}
     >

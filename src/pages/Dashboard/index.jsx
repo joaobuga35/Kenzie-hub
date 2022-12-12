@@ -48,12 +48,7 @@ export const Dashboard = () => {
               {techs.map((elem, index) => (
                 <Li key={elem.id} id={elem.id}>
                   <h3>{elem.title}</h3>
-                  <div className="divTrash">
-                    <span>{elem.status}</span>
-                    <ButtonTrash>
-                      <BsTrash />
-                    </ButtonTrash>
-                  </div>
+                  <span>{elem.status}</span>
                 </Li>
               ))}
             </TechList>
