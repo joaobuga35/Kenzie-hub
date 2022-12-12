@@ -35,8 +35,36 @@ export const Profile = styled.div`
     font-size: 1.4rem;
   }
 
+  .divTech {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      color: var(--gray-0);
+      font-size: 1.6rem;
+    }
+
+    margin-bottom: 2.8rem;
+  }
+
   @media (min-width: 1024px) {
     max-width: 90rem;
     margin: 0 auto;
+  }
+`;
+
+export const DivMessage = styled.div`
+  margin-top: 5rem;
+  height: 41.6rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .warning {
+    height: 10rem;
+    width: 10rem;
+    color: red;
   }
 `;

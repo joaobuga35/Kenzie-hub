@@ -20,3 +20,37 @@ export const BtnDefault = styled.button`
     filter: brightness(0.9);
   }
 `;
+
+export const ButtonModal = styled.button`
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 0.4rem;
+  border: none;
+  background-color: var(--gray-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .plus {
+    color: var(--gray-0);
+  }
+
+  :hover {
+    background-color: var(--gray-2);
+  }
+
+  :hover .plus {
+    color: var(--gray-3);
+  }
+`;
+
+export const ButtonTrash = styled.button`
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 0.4rem;
+  border: none;
+  background-color: var(--gray-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;

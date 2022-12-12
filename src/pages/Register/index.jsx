@@ -8,13 +8,12 @@ import { Label } from "../../components/Input/styles.js";
 import { useForm } from "react-hook-form";
 import { registerSchema } from "./registerSchema.js";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { api } from "../../services/api.js";
-import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import "animate.css";
+import { useContext } from "react";
+import { UserContext } from "../../contexts/UserContext/index.jsx";
 
 export const Register = () => {
+  const { userRegister } = useContext(UserContext);
   const {
     register,
     handleSubmit,
@@ -24,22 +23,6 @@ export const Register = () => {
     mode: "onBlur",
     resolver: yupResolver(registerSchema),
   });
-
-  const navigate = useNavigate();
-
-  const userRegister = async (form) => {
-    try {
-      const response = await api.post("users", form);
-      toast.success("Cadastro realizado com sucesso!", {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-      navigate("/");
-    } catch (error) {
-      toast.error("Usuário já cadastrado!", {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-    }
-  };
 
   const submit = async (data) => {
     await userRegister(data);
