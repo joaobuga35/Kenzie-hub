@@ -11,20 +11,20 @@ export const TechContext = createContext({});
 export const TechProvider = ({ children }) => {
   const { token } = useContext(UserContext);
   const [modalVisible, setModalVisible] = useState(false);
+  const [modalEdit, setModalEdit] = useState(false);
   const [techs, setTechs] = useState([]);
-  console.log(techs);
 
   useEffect(() => {
     (async () => {
       try {
         api.defaults.headers.common.authorization = `Bearer ${token}`;
         const response = await api.get("profile");
-        setTechs(response.data.techs);
+        setTechs([...response.data.techs]);
       } catch (error) {
         console.error(error);
       }
     })();
-  }, [modalVisible]);
+  }, [modalVisible, token]);
 
   const TechCreate = async (form) => {
     const load = toast.loading("Por favor espere...");
@@ -60,7 +60,15 @@ export const TechProvider = ({ children }) => {
   };
   return (
     <TechContext.Provider
-      value={{ modalVisible, setModalVisible, TechCreate, techs, setTechs }}
+      value={{
+        modalVisible,
+        setModalVisible,
+        TechCreate,
+        techs,
+        setTechs,
+        modalEdit,
+        setModalEdit,
+      }}
     >
       {children}
     </TechContext.Provider>

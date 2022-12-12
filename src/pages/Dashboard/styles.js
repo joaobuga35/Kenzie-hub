@@ -53,3 +53,18 @@ export const Profile = styled.div`
     margin: 0 auto;
   }
 `;
+
+export const DivMessage = styled.div`
+  margin-top: 5rem;
+  height: 41.6rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .warning {
+    height: 10rem;
+    width: 10rem;
+    color: red;
+  }
+`;
