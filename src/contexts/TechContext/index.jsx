@@ -15,7 +15,6 @@ export const TechProvider = ({ children }) => {
   const [techs, setTechs] = useState([]);
   const [filterTech, setFilterTech] = useState([]);
   const id = filterTech.map((elem) => elem.id);
-
   useEffect(() => {
     (async () => {
       try {
