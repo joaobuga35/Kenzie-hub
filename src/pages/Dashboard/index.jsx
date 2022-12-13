@@ -13,7 +13,7 @@ import { ModalCreate } from "../../components/Modals";
 import { AiFillWarning } from "react-icons/ai";
 import { ModalEditDelete } from "../../components/Modals/ModalEditAndDelete";
 export const Dashboard = () => {
-  const { datasUpdate } = useContext(UserContext);
+  const { user } = useContext(UserContext);
   const { modalVisible, setModalVisible, techs, modalEdit, setModalEdit } =
     useContext(TechContext);
 
@@ -26,8 +26,8 @@ export const Dashboard = () => {
         <div className="divContentDatas">
           <Profile>
             <div className="divUser animate__animated animate__bounceInLeft animate__slower">
-              <h2>Olá, {datasUpdate.user.name}</h2>
-              <span>{datasUpdate.user.course_module}</span>
+              <h2>Olá, {user.name}</h2>
+              <span>{user.course_module}</span>
             </div>
           </Profile>
         </div>

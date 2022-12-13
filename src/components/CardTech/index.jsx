@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { TechContext } from "../../contexts/TechContext";
 import { LiStyle } from "./styles";
+import "animate.css";
 
 export const Li = ({ children, id }) => {
   const { setModalEdit, techs, setFilterTech } = useContext(TechContext);

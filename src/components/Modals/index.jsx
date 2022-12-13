@@ -26,7 +26,7 @@ export const ModalCreate = () => {
   };
   return (
     <ModalWrapper>
-      <ModalContainer>
+      <ModalContainer className="animate__animated animate__fadeInDown animate__slow">
         <ModalTitle>
           <h3>Cadastrar Tecnologia</h3>
           <button onClick={() => setModalVisible(false)}>X</button>

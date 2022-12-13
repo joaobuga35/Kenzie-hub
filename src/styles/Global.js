@@ -67,4 +67,14 @@ export default createGlobalStyle`
     width: 100%;
   }
 
+  ::-webkit-scrollbar{
+    background-color: var(--gray-4);
+    width: 0.5rem;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--gray-3);
+    height: 2rem;
+  }
+
 `;

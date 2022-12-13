@@ -10,6 +10,7 @@ export const UserContext = createContext({});
 
 export const UserProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
+  const [user, setUser] = useState({});
   const navigate = useNavigate();
 
   const token = JSON.parse(localStorage.getItem("@TOKEN"));
@@ -20,6 +21,7 @@ export const UserProvider = ({ children }) => {
         setLoading(true);
         api.defaults.headers.common.authorization = `Bearer ${token}`;
         const response = await api.get("profile");
+        setUser(response.data);
         navigate("/dashboard");
       } catch (error) {
         console.error(error);
@@ -28,12 +30,11 @@ export const UserProvider = ({ children }) => {
         setLoading(false);
       }
     })();
-  }, []);
+  }, [token]);
 
   const userLogin = async (form) => {
     try {
       const response = await api.post("sessions", form);
-      localStorage.setItem("@dataUser", JSON.stringify(response.data));
       localStorage.setItem("@TOKEN", JSON.stringify(response.data.token));
       toast.success("Logado com sucesso!", {
         position: toast.POSITION.TOP_RIGHT,
@@ -60,11 +61,7 @@ export const UserProvider = ({ children }) => {
     }
   };
 
-  const datas = localStorage.getItem("@dataUser");
-  const datasUpdate = JSON.parse(datas);
-
   const removeLocalStorage = () => {
-    localStorage.removeItem("@dataUser");
     localStorage.removeItem("@TOKEN");
   };
   return (
@@ -74,7 +71,7 @@ export const UserProvider = ({ children }) => {
         userLogin,
         userRegister,
         loading,
-        datasUpdate,
+        user,
         removeLocalStorage,
         token,
       }}

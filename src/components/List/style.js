@@ -6,7 +6,7 @@ export const Ul = styled.ul`
   background-color: var(--gray-3);
   border-radius: 0.4rem;
   height: 41.6rem;
-  overflow-y: scroll;
+  overflow-y: auto;
   padding: 2.2rem 1.8rem;
   display: flex;
   flex-direction: column;
