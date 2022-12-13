@@ -24,7 +24,6 @@ export const UserProvider = ({ children }) => {
         setUser(response.data);
         navigate("/dashboard");
       } catch (error) {
-        console.error(error);
         navigate("/");
       } finally {
         setLoading(false);

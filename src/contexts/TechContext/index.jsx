@@ -21,9 +21,7 @@ export const TechProvider = ({ children }) => {
         api.defaults.headers.common.authorization = `Bearer ${token}`;
         const response = await api.get("profile");
         setTechs([...response.data.techs]);
-      } catch (error) {
-        console.error(error);
-      }
+      } catch (error) {}
     })();
   }, [modalVisible, token, modalEdit, id]);
 
@@ -33,9 +31,7 @@ export const TechProvider = ({ children }) => {
       toast.success("Tecnologia Atualizada!", {
         position: toast.POSITION.TOP_RIGHT,
       });
-    } catch (error) {
-      console.error(error);
-    }
+    } catch (error) {}
   };
 
   const userDelete = async (form) => {
@@ -44,9 +40,7 @@ export const TechProvider = ({ children }) => {
       toast.success("Tecnologia deletada!", {
         position: toast.POSITION.TOP_RIGHT,
       });
-    } catch (error) {
-      console.error(error);
-    }
+    } catch (error) {}
   };
 
   const TechCreate = async (form) => {
@@ -66,7 +60,6 @@ export const TechProvider = ({ children }) => {
         progress: undefined,
       });
     } catch (error) {
-      console.log(error);
       toast.update(load, {
         render: "Tecnologia já existente!",
         type: "error",
