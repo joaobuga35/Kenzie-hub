@@ -29,7 +29,7 @@ export const ModalEditDelete = () => {
   };
   return (
     <ModalWrapper>
-      <ModalContainer>
+      <ModalContainer className="animate__animated animate__fadeInDown animate__slow">
         <ModalTitle>
           <h3>Tecnologia Detalhes</h3>
           <button onClick={() => setModalEdit(false)}>X</button>
