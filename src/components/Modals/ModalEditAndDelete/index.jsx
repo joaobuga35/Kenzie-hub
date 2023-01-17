@@ -8,13 +8,9 @@ import { ModalContainer, ModalForm, ModalTitle, ModalWrapper } from "../styles";
 import { registerSchemaEdit } from "./registerSchemaEdit";
 
 export const ModalEditDelete = () => {
-  const { setModalEdit, techs, filterTech, userUpdate, userDelete } =
+  const { setModalEdit, filterTech, userUpdate, userDelete } =
     useContext(TechContext);
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
+  const { register, handleSubmit } = useForm({
     mode: "onSubmit",
     defaultValues: {
       title: filterTech.map((elem) => elem.title),

@@ -18,7 +18,6 @@ function App() {
         pauseOnHover
         theme="dark"
       />
-      <ToastContainer />
       <Global />
       <UserProvider>
         <TechProvider>
