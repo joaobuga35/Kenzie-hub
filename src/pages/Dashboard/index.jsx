@@ -1,11 +1,10 @@
 import { Header } from "../../components/Header";
 import { DivDashMain, DivMessage, Profile } from "./styles";
 import "animate.css";
-import { ButtonModal, ButtonTrash } from "../../styles/Button";
+import { ButtonModal } from "../../styles/Button";
 import { BsPlusLg } from "react-icons/bs";
 import { TechList } from "../../components/List";
 import { Li } from "../../components/CardTech";
-import { BsTrash } from "react-icons/bs";
 import { useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import { TechContext } from "../../contexts/TechContext";
@@ -14,7 +13,7 @@ import { AiFillWarning } from "react-icons/ai";
 import { ModalEditDelete } from "../../components/Modals/ModalEditAndDelete";
 export const Dashboard = () => {
   const { user } = useContext(UserContext);
-  const { modalVisible, setModalVisible, techs, modalEdit, setModalEdit } =
+  const { modalVisible, setModalVisible, techs, modalEdit } =
     useContext(TechContext);
 
   return (
