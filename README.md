@@ -2,11 +2,14 @@ Neste projeto do módulo de front-end o objetivo era criar uma rede, a qual os a
 
 Aplicação totalmente responsiva para todos os tamanhos de tela e inteiramente feita com React. 
 
+Foram utilizadas requisições HTTP em uma API para poder registrar e logar o usuário, assim como registrar,editar e deletar suas tecnologias.
+
 Foram utilizadas as bibliotecas : 
 React Hook Form 
+Axios
 Yup 
 Toastify
 Animate.css
 Styled-Components
 
-Link do vercel: https://react-nu-kenzie-sable.vercel.app/
+Link do vercel: https://react-entrega-kenzie-hub-joaobuga35.vercel.app/
